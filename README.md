@@ -28,6 +28,6 @@ La ***idea principal*** es crear un agente capaz de encontrar la salida, o mejor
 
 # Integrantes
 * Cerero Amador María Cristina
-* Salgado Gómez Kevin
-* Sosa Guzmán Mariana
-* Ruíz Ríos Eduardo
+* Salgado Gómez Kevin ([KevinSg](https://github.com/KevinSalgado))
+* Sosa Guzmán Mariana ([MarianaS01](https://github.com/MarianaS01))
+* Ruíz Ríos Eduardo ([iononi](https://github.com/iononi))
