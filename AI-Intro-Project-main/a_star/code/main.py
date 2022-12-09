@@ -3,6 +3,8 @@ from a_star import a_star_search, print_labyrinth, labyrinth
 import numpy as np
 import image_process as img
 
+OFFSET = 10
+
 def main():
     """Main Function"""
 
@@ -18,18 +20,25 @@ def main():
 
     assert path is not None
     _labyrinth = labyrinth.copy().astype(np.uint8)
-    for index in range(0, len(path), 30):
+    for index in range(0, len(path), 20):
         _cell = path[index]
-        print(_cell)
-        _labyrinth[_cell.row][_cell.column] = 5
+        #print(_cell)
+        # es el de arriba un obstaculo?
+        if _labyrinth[_cell.row - 1][_cell.column] == 0:
+            _cell.row += OFFSET
+        # es el de abajo un obstaculo?
+        if _labyrinth[_cell.row + 1][_cell.column] == 0:
+            _cell.row -= OFFSET
+        # es el de la izquierda un obstaculo?
+        if _labyrinth[_cell.row][_cell.column - 1] == 0:
+            _cell.column += OFFSET
+        # es el de la derecha un obstaculo?
+        if _labyrinth[_cell.row][_cell.column + 1] == 0:
+            _cell.column -= OFFSET
+        _labyrinth[_cell.row][_cell.column] = 127
 
     if path != []:
-        _labyrinth[goal_cell.row][goal_cell.column] = 5
-
-    for row in range(_labyrinth.shape[0]):
-        for column in range(_labyrinth.shape[1]):
-            if _labyrinth[row][column] == 5:
-                _labyrinth[row][column] = 0
+        _labyrinth[goal_cell.row][goal_cell.column] = 127
 
     # print_labyrinth(labyrinth)
     img.display("Laberinto :D", _labyrinth)
