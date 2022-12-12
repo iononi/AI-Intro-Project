@@ -3,7 +3,7 @@ import numpy as np
 import cv2
 from PIL import Image
 
-path_ = 'labyrinth3_noborder.png'
+path_ = 'img/borderless.png'
 img_pil3 = Image.open(path_)
 
 # imagen binarizada formato RGB
