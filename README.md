@@ -34,3 +34,6 @@ Como siguiente objetivo se tiene el uso de una cámara en el agente que le permi
 * Salgado Gómez Kevin ([KevinSg](https://github.com/KevinSalgado))
 * Sosa Guzmán Mariana ([MarianaS01](https://github.com/MarianaS01))
 * Ruíz Ríos Eduardo ([iononi](https://github.com/iononi))
+
+# Imagen de demostración
+![Imagen de demostración](assets/demo_labyrinth.png)
