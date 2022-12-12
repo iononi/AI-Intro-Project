@@ -23,6 +23,11 @@ def main():
     for index in range(0, len(path), 20):
         _cell = path[index]
         #print(_cell)
+        if _labyrinth[_cell.row - 1][_cell.column + 8] == 0 or _labyrinth[_cell.row - 1][_cell.column - 8] == 0:
+            _cell.row += OFFSET
+        if _labyrinth[_cell.row + 1][_cell.column + 8] == 0 or _labyrinth[_cell.row + 1][_cell.column - 8] == 0:
+            _cell.row -= OFFSET
+
         # es el de arriba un obstaculo?
         if _labyrinth[_cell.row - 1][_cell.column] == 0:
             _cell.row += OFFSET
@@ -36,6 +41,8 @@ def main():
         if _labyrinth[_cell.row][_cell.column + 1] == 0:
             _cell.column -= OFFSET
         _labyrinth[_cell.row][_cell.column] = 127
+
+        print(_cell)
 
     if path != []:
         _labyrinth[goal_cell.row][goal_cell.column] = 127
