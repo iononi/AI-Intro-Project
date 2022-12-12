@@ -41,16 +41,10 @@ for bp in black_points:
     if (x-1, y) in black_points and (x+1, y) not in black_points:
         # poner los siguientes THICK a la derecha de negro
         img_np_binary_copy[x: x+THICK+1, y] = 0
-        # for i in range(x, x+THICK+1):
-        #     img_np_binary_copy[i, y] = 0
     # si el de la derecha es negro px-THICK: x, yero el de la izquierda no
     elif (x+1, y) in black_points and (x-1, y) not in black_points:
         # poner los sigueintes THICK a la izquierda de blanco
-        img_np_binary_copy[x-THICK: x, y] = 0
-        # for i in range(x-THICK, x+1):
-        #     img_np_binary_copy[i, y] = 0        
-    # elif (x+1, y) not in black_points and (x-1, y) not in black_points:
-    #     img_np_binary_copy[x-THICK: x+THICK+1, y] = 0
+        img_np_binary_copy[x-THICK: x, y] = 0      
     # elif el de arriba es negro pero el de abajo no
     elif (x, y+1) in black_points and (x, y-1) not in black_points:
         # poner el de abajo como negro
