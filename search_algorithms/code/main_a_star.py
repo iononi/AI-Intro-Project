@@ -4,6 +4,7 @@ import numpy as np
 import image_process as img
 
 OFFSET = 10
+file = open('coordenadas.txt', 'w')
 
 def main():
     """Main Function"""
@@ -42,11 +43,12 @@ def main():
             _cell.column -= OFFSET
         _labyrinth[_cell.row][_cell.column] = 127
 
-        print(_cell)
+        print(_cell, file=file)
 
     if path != []:
         _labyrinth[goal_cell.row][goal_cell.column] = 127
 
+    file.close()
     # print_labyrinth(labyrinth)
     img.display("Laberinto :D", _labyrinth)
 
